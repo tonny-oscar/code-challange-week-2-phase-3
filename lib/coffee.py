@@ -5,7 +5,7 @@ from customer import Customer
 class Coffee:
     def __init__(self, name: str):
         self._name = None
-        self.name = name  # Use the property setter for validation
+        self.name = name
 
     @property
     def name(self) -> str:
@@ -15,7 +15,8 @@ class Coffee:
     def name(self, value: str):
         if not isinstance(value, str) or len(value) < 3:
             raise ValueError("Coffee name must be at least 3 characters long")
-        if hasattr(self, '_name') and self._name is not None:  # Prevent changes after initialization
+            #to prevent changes after initialization
+        if hasattr(self, '_name') and self._name is not None: 
             raise AttributeError("Coffee name cannot be changed after initialization")
         self._name = value
 
@@ -36,3 +37,4 @@ class Coffee:
 
     def __repr__(self) -> str:
         return f"Coffee(name='{self.name}')"
+        
