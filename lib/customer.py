@@ -58,11 +58,11 @@ class Coffee:
 mocha = Coffee("Mocha")
 latte = Coffee("Latte")
 
-# Create customers
+# customers
 brian = Customer("Brian")
 kevin = Customer("Kevin")
 
-# Customers place orders
+# Customers orders
 brian.create_order(mocha, 4.5)
 brian.create_order(latte, 4.0)
 kevin.create_order(mocha, 3.0)
@@ -72,10 +72,9 @@ kevin.create_order(mocha, 3.0)
 print(f"Brian's orders: {[order.coffee.name for order in brian.orders()]}")
 # Output: Brian's orders: ['Mocha', 'Latte']
 
-# Check unique coffees Brian has ordered
+# Check what Brian has ordered
 print(f"Brian's unique coffees: {brian.coffees()}")
-# Output unique coffees: ['Mocha', 'Latte']
+# coffees: ['Mocha', 'Latte']
 
-# Determine who is the most aficionado of Mocha
 most_aficionado = Customer.most_aficionado(mocha)
 print(f"The most aficionado of Mocha is: {most_aficionado.name}")
